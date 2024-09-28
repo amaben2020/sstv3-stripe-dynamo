@@ -30,7 +30,7 @@ export async function main(event: APIGatewayProxyEvent) {
   try {
     await dynamoDb.send(new PutCommand(params));
     return {
-      statusCode: 200,
+      statusCode: 201,
       body: JSON.stringify(params.Item),
     };
   } catch (error) {
