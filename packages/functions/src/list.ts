@@ -8,7 +8,7 @@ const dynamoDb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 export const main = Util.handler(async (event) => {
   const params = {
     TableName: Resource.Notes.name,
-    keyConditionExpression: 'userId = :userId',
+    KeyConditionExpression: 'userId = :userId',
     ExpressionAttributeValues: {
       ':userId': '123',
     },
