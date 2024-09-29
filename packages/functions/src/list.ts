@@ -1,6 +1,7 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, QueryCommand } from '@aws-sdk/lib-dynamodb';
-import { Util } from '@monorepo-template/core/util';
+import { Util } from '@monorepo-template/core/src/util';
+
 import { Resource } from 'sst';
 
 const dynamoDb = DynamoDBDocumentClient.from(new DynamoDBClient({}));

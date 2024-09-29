@@ -2,7 +2,7 @@ import * as uuid from 'uuid';
 import { Resource } from 'sst';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { PutCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
-import { Util } from '@monorepo-template/core/util';
+import { Util } from '@monorepo-template/core/src/util';
 
 const dynamoDb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 

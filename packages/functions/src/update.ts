@@ -2,7 +2,8 @@ import { Resource } from 'sst';
 
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { UpdateCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
-import { Util } from '@monorepo-template/core/util';
+import { Util } from '@monorepo-template/core/src/util';
+
 const dynamoDb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 export const main = Util.handler(async (event) => {
   const data = JSON.parse(event.body || '{}');
