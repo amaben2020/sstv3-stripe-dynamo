@@ -13,10 +13,10 @@ A template to create a monorepo SST ❍ Ion project.
    cd MY_APP
    ```
 
-3. Rename the files in the project to the name of your app. 
+3. Rename the files in the project to the name of your app.
 
    ```bash
-   npx replace-in-file '/monorepo-template/g' MY_APP **/*.* --verbose
+   npx replace-in-file '/app/g' MY_APP **/*.* --verbose
    ```
 
 4. Deploy!
@@ -26,7 +26,7 @@ A template to create a monorepo SST ❍ Ion project.
    npx sst deploy
    ```
 
-6. Optionally, enable [_git push to deploy_](https://ion.sst.dev/docs/console/#autodeploy).
+5. Optionally, enable [_git push to deploy_](https://ion.sst.dev/docs/console/#autodeploy).
 
 ## Usage
 
@@ -39,7 +39,7 @@ This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/work
    ```ts
    export module Example {
      export function hello() {
-       return "Hello, world!";
+       return 'Hello, world!';
      }
    }
    ```
@@ -47,7 +47,7 @@ This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/work
    That you can use across other packages using.
 
    ```ts
-   import { Example } from "@aws-monorepo/core/example";
+   import { Example } from '@aws-monorepo/core/example';
 
    Example.hello();
    ```
@@ -58,7 +58,7 @@ This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/work
 
 3. `scripts/`
 
-    This is for any scripts that you can run on your SST app using the `sst shell` CLI and [`tsx`](https://www.npmjs.com/package/tsx). For example, you can run the example script using:
+   This is for any scripts that you can run on your SST app using the `sst shell` CLI and [`tsx`](https://www.npmjs.com/package/tsx). For example, you can run the example script using:
 
    ```bash
    npm run shell src/example.ts
@@ -73,3 +73,24 @@ In the template, we have an `api.ts`, and `storage.ts`. These export the created
 ---
 
 Join the SST community over on [Discord](https://discord.gg/sst) and follow us on [Twitter](https://twitter.com/SST_dev).
+
+aws cognito-idp sign-up \
+--region eu-west-1 \
+--client-id eu-west-1_qbntwnnZz \
+--username admin@example.com \
+--password Passw0rd!
+
+npx aws-api-gateway-cli-test \
+--user-pool-id='eu-west-1_qbntwnnZz' \
+--app-client-id='3b0a0892sbo92qeouuhd813fj9' \
+--cognito-region='eu-west-1' \
+--identity-pool-id='eu-west-1:7b7e9361-4d07-4aec-bcc8
+-7dadc7d5a0db' \
+--invoke-url='https://oa1t1m3lsb.execute-api.eu-west-1.a
+mazonaws.com' \
+--api-gateway-region='eu-west-1' \
+--username='admin@example.com' \
+--password='Passw0rd!' \
+--path-template='/notes' \
+--method='POST' \
+--body='{"content":"hello world","attachment":"hello.jpg"}'
