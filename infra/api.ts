@@ -8,6 +8,9 @@ export const api = new sst.aws.ApiGatewayV2('Api', {
         // link our dynamodb to the handler to allow our api access table
         link: [table],
       },
+      args: {
+        auth: { iam: true },
+      },
     },
   },
 });
