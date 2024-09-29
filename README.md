@@ -94,3 +94,18 @@ mazonaws.com' \
 --path-template='/notes' \
 --method='POST' \
 --body='{"content":"hello world","attachment":"hello.jpg"}'
+
+npx aws-api-gateway-cli-test \
+--username='admin@example.com' \
+--password='Passw0rd!' \
+--user-pool-id='eu-west-1_qbntwnnZz' \
+--app-client-id='3b0a0892sbo92qeouuhd813fj9' \
+--cognito-region='eu-west-1' \
+--identity-pool-id='eu-west-1:7b7e9361-4d07-4aec-bcc8
+-7dadc7d5a0db' \
+--invoke-url='https://oa1t1m3lsb.execute-api.eu-west-1.a
+mazonaws.com' \
+--api-gateway-region='eu-west-1' \
+--path-template='/billing' \
+--method='POST' \
+--body='{"source":"tok_visa","storage":21}'

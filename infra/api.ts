@@ -1,4 +1,4 @@
-import { table } from './storage';
+import { secret, table } from './storage';
 
 // Create the API
 export const api = new sst.aws.ApiGatewayV2('Api', {
@@ -6,7 +6,7 @@ export const api = new sst.aws.ApiGatewayV2('Api', {
     route: {
       handler: {
         // link our dynamodb to the handler to allow our api access table
-        link: [table],
+        link: [table, secret],
       },
       args: {
         auth: { iam: true },
@@ -20,3 +20,4 @@ api.route('GET /notes/{id}', 'packages/functions/src/get.main');
 api.route('GET /notes', '/packages/functions/src/list.main');
 api.route('PUT /notes/{id}', 'packages/functions/src/update.main');
 api.route('DELETE /notes/{id}', 'packages/functions/src/delete.main');
+api.route('POST /billing', 'packages/functions/src/billing.main');
