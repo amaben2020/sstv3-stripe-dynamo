@@ -109,3 +109,6 @@ mazonaws.com' \
 --path-template='/billing' \
 --method='POST' \
 --body='{"source":"tok_visa","storage":21}'
+
+once done with the whole app, you can deploy using
+npx sst deploy --stage production

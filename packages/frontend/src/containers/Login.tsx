@@ -23,6 +23,7 @@ export default function Login() {
     setIsLoading(true);
     try {
       await Auth.signIn(fields.email, fields.password);
+      console.log(await Auth.signIn(fields.email, fields.password));
       userHasAuthenticated(true);
     } catch (error) {
       onError(error);
