@@ -26,3 +26,6 @@ export const main = Util.handler(async (event) => {
   await dynamoDb.send(new UpdateCommand(params));
   return JSON.stringify({ status: true });
 });
+
+
+ 
