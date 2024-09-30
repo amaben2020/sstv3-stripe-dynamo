@@ -13,7 +13,7 @@ export const main = Util.handler(async (event) => {
     ExpressionAttributeValues: {
       ':userId':
         event.requestContext.authorizer?.iam.cognitoIdentity.identityId,
-    },
+    }, 
   };
 
   const result = await dynamoDb.send(new QueryCommand(params));
